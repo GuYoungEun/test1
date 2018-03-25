@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>wagle-OMG(아웃도어미션게임)</title>
+    <meta name="Subject" content="홈페이지주제 입력">
+    <meta name="Title" content="wagle-OMG(아웃도어미션게임)">
+    <meta name="Description" content="설명문 입력">
+    <meta name="Keywords" content="키워드 입력">
+    <meta name="Author" content="Gu"> 
+    <link href="shortcut_apple1.png" rel="apple-touch-icon-precomposed" /> 
+    <link href="shortcut_apple2.png" rel="apple-touch-icon" />
+    <link href="apple-114x114.png" sizes="114x114" rel="apple-touch-icon" />
+    <link href="apple-144x144.png" sizes="144x144" rel="apple-touch-icon" /> 
+    <link href="favicon.ico" rel="shortcut icon" />
+    <script type="text/javascript"> 
+     <!-- 
+     // 주소창 자동 닫힘 
+     window.addEventListener("load", function(){ 
+        setTimeout(loaded, 100); 
+     }, false); 
+     function loaded(){ 
+        window.scrollTo(0, 1); 
+     } 
+     //--> 
+    </script>
+    
+    <style>
+        * { margin:0; padding:0; }
+        html,body { width:100%; height:100%; }
+        ul { list-style:none; }
+        a { text-decoration:none; }
+        img { border:0; }
+        
+        #wrap { width:100%; height:100%; overflow-x:hidden; }
+        #hd { width:100%; height:120px; position:fixed; top:0; left:0; z-index:99;background-color:#14b2c1; }
+        .hdTop { width:100%; height:50px; }
+        #logo { display:block; width:130px; height:42px; margin:0 auto; padding-top:4px; }
+        #tnb { width:100%; height:70px; background-color:rgba(255,255,255,0.8); }
+        #tnb li { display:block; width:20%; height:70px; float:left; }
+        #tnb li a { display:block; width:100%; height:70px; color:#000; font-size:0.8rem; font-weight:bold; }
+        #tnb li a span { display:block; text-align:center; }
+        #tnb li a img { display:block; margin:0 auto; }
+        .title { display:block; font-size:1.1em; color:#fff; line-height:1.5; margin-left:14px; }
+        .subTitle { display:block; font-size:3vw; color:#fff; line-height:1.5; margin-left:28px; }
+        
+        /*.scroll_icon { position:fixed; top:40%; right:5%; width:60px; height:60px; background-image:url(./img/scroll_down.png); z-index:99; background-size:100% 100%; }*/
+        .content_wrap { position:relative; top:120px; left:0; width:100%; height:100%; }
+        #visual { width:100%; height:100%; background-size:100% 100%; background-image:url(./img/visual_bg.png); }
+        .figuBox { width:100%; height:200px; padding-top:8%;}
+        #visual img { display:block; position:absolute; bottom:0; right:0%; width:100%; height:80%; }
+        
+        #page1 {width:100%; height:100%; background-image:url(./img/page1_bg.png); background-size:100% 100%; }
+        #page1 img { display:block; width:190px; height:62px; margin:0 auto; padding-top:60px; }
+        #page1 h2 { text-align:center; font-size:6vw; line-height:2;}
+        #page1 iframe { display:block; margin:0 auto; }
+        
+        #page2 {width:100%; height:100%; background-image:url(./img/page2_bg.png); background-size:100% 100%;}
+        .page2_title { text-align:center; color:#fff; line-height:2; padding-top:80px; }
+        .page2_bd_box { width:50%; height:30px; margin:0 auto; margin-bottom:20px;}
+        .page2_bd_box ul { width:100%; height:30px; }
+        .page2_bd_box ul li { display:block; float:left; width:20%; height:30px; color:#fff; font-weight:bold; font-size:5vw; 
+                            text-align:center; line-height:30px; color:#e4e497; border:1px solid #575352; box-sizing:border-box;}
+        .page2_content_box { width:80%; height:70%; margin:0 auto; position:relative; }
+        .page2_content_box ul { width:100%; height:100%; }
+        .page2_content_box ul li { display:block; width:100%; height:50%; }
+        .page2_top { background-color:#453f40; }
+        .page2_top img { display:block; width:80%; height:80%; margin:0 auto; padding-top:10%; }
+        .question { position:absolute; top:47%; left:18%; text-align:center; color:#fff; }
+        .page2_bottom { background-color:#585354; }
+        .page2_bottom ul { width:80%; height:30%; padding:30px 0px 30px 0px; margin:0 auto; }
+        .page2_bottom ul li { display:block; height:100%; width:30%; float:left; border:4px solid #74caaf; box-sizing:border-box;
+                            background-color:#fff;}
+        .page2_bottom ul li:nth-of-type(2) { margin-left:5%; margin-right:5%; }
+        .answer_box { width:40%; height:30%; margin:0 auto; border-radius:50%; background-color:#af403e; position:relative; }
+        .answer_inner { width:92%; height:90%; border-radius:50%; position:absolute; top:5%; left:4%; background-color:#ea7472; }
+        .answer_box p { text-align:center; color:#fff; font-size:4vw; line-height:4; }
+        
+        #page3 {width:100%; height:100%; background-image:url(./img/page3_bg.png); background-size:100% 100%; }
+        .page3_title { text-align:center; line-height:5; font-size:6vw; color:#fff; }
+        .page3_title b { color:#ffef81; }
+        .page3_img_box { width:80%; height:50%; border-radius:50%; margin:0 auto; background-image:url(./img/busan.jpg); 
+                        background-size:100% 100%; }
+        .page_img_txt { width:100%; height:50%; padding-top:25%; }
+        .page3_img_title { width:60%; height:30%; margin:0 auto; line-height:2; border:1px solid #fff; border-radius:15%;
+                            text-align:center; color:#fff;}
+        .img_area { color:#fff; text-align:center; font-size:7vw; line-height:2; }
+        .page_img_txt span { display:block; text-align:center; color:#fff; font-size:4vw; }
+        
+        .page3_txt_box { width:80%; height:26%; margin:0 auto; background-color:#63ac95; }
+        
+        #ft { position:fixed; bottom:0; left:0; z-index:99; width:100%; height:60px;
+            background-color:rgba(56,198,243,0.8); }
+        #fnb { width:100%; height:40px; }
+        #fnb ul { width:100%; height:40px; }
+        .grid4 { display:block; width:22.5%; line-height:40px; float:left; }
+        .first { margin-left:5%; }
+        #fnb ul li a { display:block; width:100%; text-align:center; font-size:0.8em; color:#000;
+                        font-weight:bold; }
+        .copyright { text-align:center; font-size:0.7em; line-height:20px; }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="hd">
+            <div class="hdTop">
+                <img src="./img/logo.png" alt="와글로고이미지" id="logo">
+            </div>
+            <ul id="tnb">
+                <li>
+                    <a href="">
+                        <span>검색</span>
+                        <img src="./img/search.png" alt="검색 아이콘">
+                        <span>SEARCH</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span>커뮤니티</span>
+                        <img src="./img/community.png" alt="검색 아이콘">
+                        <span>TALK</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span>구매</span>
+                        <img src="./img/buy.png" alt="검색 아이콘">
+                        <span>BUY</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span>힌트</span>
+                        <img src="./img/hint.png" alt="검색 아이콘">
+                        <span>HINT</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span>로그인</span>
+                        <img src="./img/login.png" alt="검색 아이콘">
+                        <span>LOGIN</span>
+                    </a>
+                </li>
+            </ul>
+        </header>
+        <div class="scroll_icon"></div>
+        <div class="page_top_box"></div>
+        <div class="content_wrap">
+            <figure id="visual">
+                <div class="figuBox">
+                    <h2 class="title">
+                    국내최초<br/>
+                    야외방탈출 + 런닝맨 + 뇌색남녀<br/>
+                    =아웃도어미션게임
+                    </h2>
+                    <p class="subTitle">
+                        도시를 누비는 아웃도어 두뇌게임
+                    </p>
+                </div>
+                <img src="./img/visual_bg2.png" alt="캐릭터누끼이미지">
+            </figure>
+            
+            <section id="page1">
+                <img src="./img/page1Title.png" alt="OMG로고">
+                <h2 class="title">아웃도어 미션 게임</h2>
+                <iframe width="300" height="280" src="https://www.youtube.com/embed/SAKefNK27oo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>이 브라우저는 iframe을 지원하지 않습니다.</iframe>
+            </section>
+            
+            <section id="page2">
+                <h2 class="page2_title">Warming-Up Quiz</h2>
+                <div class="page2_bd_box">
+                    <ul>
+                        <li>워</li><li>밍</li><li>업</li><li>퀴</li><li>즈</li>
+                    </ul>
+                </div>
+                <div class="page2_content_box">
+                    <ul>
+                        <li class="page2_top">
+                            <img src="./img/wmup_img.png" alt="문제사진">
+                            <h3 class="question">빈칸에 들어갈 정답은?</h3>
+                        </li>
+                        <li class="page2_bottom">
+                            <ul>
+                                <li></li><li></li><li></li>
+                            </ul>
+                            <div class="answer_box">
+                                <div class="answer_inner">
+                                    <p>정답 확인하기</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="page3">
+                <h3 class="page3_title">당신의 <b>미션</b>을 선택하세요</h3>
+                <div class="page3_img_box">
+                    <div class="page_img_txt">
+                        <p class="page3_img_title">아웃도어미션게임</p>
+                        <h2 class="img_area">Busan Heaundae</h2>
+                        <span>해운대</span>
+                    </div>
+                </div>
+                <div class="page3_txt_box">
+                    <ul class="page3_name">
+                        <li class="page3_left"></li>
+                        <li class="page3_right"></li>
+                    </ul>
+                    <ul class="page3_num">
+                        <li class="page3_left"></li>
+                        <li class="page3_right"></li>
+                    </ul>
+                    <ul class="page3_confirm">
+                        <li class="page3_left"></li>
+                        <li class="page3_right"></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <footer id="ft">
+            <nav id="fnb">
+                <ul>
+                    <li class="grid4 first">
+                        <a href="">프로그램소개</a>
+                    </li>
+                    <li class="grid4">
+                        <a href="">주문조회</a>
+                    </li>
+                    <li class="grid4">
+                        <a href="">전화문의</a>
+                    </li>
+                    <li class="grid4">
+                        <a href="">문자문의</a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="copyright">All rights Reserved, Design by GU.</p>
+        </footer>
+    </div>
+</body>
+</html>
